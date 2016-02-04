@@ -35,11 +35,7 @@
 			$('#keyboard').keyboard();
 		});
 	</script>
-	<style>
-	body{
-		background-color: #03ffff;
-	}
-	</style>
+
 </head>
 <body>
 <Center>
