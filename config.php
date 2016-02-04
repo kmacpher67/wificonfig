@@ -53,18 +53,20 @@
 	<form class="form-vertical">
 	<div class="form-group">
 	  <div class="row">
-		 <div class="col-xs-12">
-			<div id="ssidlisting" class="large"  > 
-				<select>
+		 <div class="col-xs-3"></div>
+		 <div class="col-xs-6">
+			<div id="ssidlisting" > 
+				<select class="form-control">
 				<?php include 'wifi.php';?>
 				  <option value="HardCodedinConfig">None</option>
 				</select>
 			</div></div>
 		</div>
 	  <div class="row">
-		  <div id="col-xs-12"> <!-- wrapper only needed to center the input -->
+<div class="col-xs-3"></div>
+		  <div id="kbid" class="col-xs-6"> <!-- wrapper only needed to center the input -->
 				<!-- keyboard input -->
-				<input id="keyboard" type="text" class="large" >
+				<input id="keyboard" type="text" class="form-control" >
 			</div> <!-- End wrapper -->
 		</div>
 	</div>
