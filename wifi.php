@@ -16,5 +16,5 @@
     ?>
  	<?php
 	foreach(preg_split("/((\r?\n)|(\r\n?))/", $newssid) as $line){ ?>
-           <option value="<?php echo $line; ?>"><?php echo $line; ?></option> 
+           <option value="<?php echo $line; ?>" <?php if($line==$currentwifi){ echo' selected'; }?> ><?php echo $line; ?></option> 
 	<?php } ?>
