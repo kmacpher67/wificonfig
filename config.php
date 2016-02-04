@@ -67,8 +67,8 @@
 			</div></div>
 		</div>
 	  <div class="row">
-<div class="col-xs-3"><label for="keyboard">wifi password:</label></div>
-		  <div id="kbid" class="col-xs-4"> <!-- wrapper only needed to center the input -->
+<div class="col-xs-4"><label for="keyboard">wifi password:</label></div>
+		  <div id="kbid" class="col-xs-6"> <!-- wrapper only needed to center the input -->
 				<!-- keyboard input -->
 				<input id="keyboard" type="text" class="form-control" >
 			</div> <!-- End wrapper -->
