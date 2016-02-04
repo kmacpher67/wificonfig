@@ -51,7 +51,7 @@
 	<div class="form-group">
 	  <div class="row">
 		 <div class="col-xs-4">			
-		 <label for="ssid">SSID:</label>
+		 <label for="ssid" class="text-right" >SSID:</label>
 		 </div>
 		 <div class="col-xs-6">
 			<div id="ssidlisting" > 
@@ -63,7 +63,7 @@
 			</div></div>
 		</div>
 	  <div class="row">
-<div class="col-xs-4"><label for="keyboard">wifi password:</label></div>
+<div class="col-xs-4"><label for="keyboard"  class="text-right">wifi password:</label></div>
 		  <div id="kbid" class="col-xs-6"> <!-- wrapper only needed to center the input -->
 				<!-- keyboard input -->
 				<input id="keyboard" type="text" class="form-control" >
