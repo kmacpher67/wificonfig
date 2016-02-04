@@ -8,13 +8,15 @@
     //echo "<hr>";
     //echo "<!-- " + $newssid + " --!>";
 
-   $currentwifi = shell_exec(" iwconfig 2>&1 | awk '/ESSID:/ { print $4;}' | cut -d ':' -f 2- |  sed -e 's/^\"//'  -e 's/\"$//' ");
+   $currentwifi = trim(shell_exec(" iwconfig 2>&1 | awk '/ESSID:/ { print $4;}' | cut -d ':' -f 2- |  sed -e 's/^\"//'  -e 's/\"$//' "));
 
+    //echo $currentwifi;
+    //echo strcmp("linksys",$currentwifi); // needed trim command to be equal 
     //... 
 	$_SESSION['ssid']=$newssid;
 	$_SESSION['currentwifi']=$currentwifi;
     ?>
  	<?php
 	foreach(preg_split("/((\r?\n)|(\r\n?))/", $newssid) as $line){ ?>
-           <option value="<?php echo $line; ?>" <?php if($line==$currentwifi){ echo' selected'; }?> ><?php echo $line; ?></option> 
+           <option value="<?php echo $line; ?>" <?php if(strcmp($line,$currentwifi)==0){ echo' selected'; }?> ><?php echo $line; ?></option> 
 	<?php } ?>
