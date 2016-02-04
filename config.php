@@ -56,7 +56,11 @@
 		 <div class="col-xs-12">
 			<div id="ssidlisting" class="large"  > 
 				<select>
-				  <option value="linksys">linksys</option>
+				<?php
+					include 'wifi.php';
+					foreach($newssid as $key => $value){ ?>
+                    <option value="<?php echo $value; ?>"><?php echo $value['profile']; ?></option> 
+				<?php } ?>
 				  <option value="dlink">dlink</option>
 				  <option value="Password">WPA Pwd Protected    </option>
 				  <option value="OakHill">Oakhill</option>
