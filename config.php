@@ -9,7 +9,6 @@
 	<!-- demo -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/demo.css" rel="stylesheet">
 
 	<!-- jQuery & jQuery UI + theme (required) -->
 	<link href="css/jquery-ui.min.css" rel="stylesheet">
@@ -28,6 +27,8 @@
 	<script src="../js/jquery.keyboard.extension-autocomplete.js"></script>
 	-->
 
+	<link href="css/demo.css" rel="stylesheet">
+		
 	<!-- initialize keyboard (required) -->
 	<script>
 		$(function(){
