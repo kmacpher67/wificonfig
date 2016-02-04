@@ -1,7 +1,7 @@
 /* keyboard - demo CSS */
 html, body, div, input, textarea {
  font-family: Verdana,Tahoma,Segoe,sans-serif;
- font-size: 28px;
+ font-size: 30px;
 }
 
 .form-control {
@@ -10,6 +10,10 @@ html, body, div, input, textarea {
     height: 65px;
     padding: 10px 15px;
 	font-size: 30px;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-size: 0.7em;
 }
 
 body { background: #181818; color: #ddd; height: 98%; margin: 0 auto; padding: 0; }
