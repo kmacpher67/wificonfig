@@ -54,7 +54,7 @@
 	<form class="form-vertical">
 	<div class="form-group">
 	  <div class="row">
-		 <div class="col-xs-3">			
+		 <div class="col-xs-4">			
 		 <label for="ssid">SSID:</label>
 		 </div>
 		 <div class="col-xs-6">
@@ -68,7 +68,7 @@
 		</div>
 	  <div class="row">
 <div class="col-xs-3"><label for="keyboard">wifi password:</label></div>
-		  <div id="kbid" class="col-xs-6"> <!-- wrapper only needed to center the input -->
+		  <div id="kbid" class="col-xs-4"> <!-- wrapper only needed to center the input -->
 				<!-- keyboard input -->
 				<input id="keyboard" type="text" class="form-control" >
 			</div> <!-- End wrapper -->
