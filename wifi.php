@@ -8,9 +8,11 @@
     //echo "<hr>";
     //echo "<!-- " + $newssid + " --!>";
 
+   $currentwifi = shell_exec(" iwconfig 2>&1 | awk '/ESSID:/ { print $4;}' | cut -d ':' -f 2- |  sed -e 's/^\"//'  -e 's/\"$//' ");
 
     //... 
 	$_SESSION['ssid']=$newssid;
+	$_SESSION['currentwifi']=$currentwifi;
     ?>
  	<?php
 	foreach(preg_split("/((\r?\n)|(\r\n?))/", $newssid) as $line){ ?>
