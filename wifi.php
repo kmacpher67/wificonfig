@@ -9,9 +9,9 @@
     //echo "<!-- " + $newssid + " --!>";
 
 
-    //... $_SESSION['ssid']=$ssid;
+    //... 
+	$_SESSION['ssid']=$newssid;
     ?>
-<BR>
  	<?php
 	foreach(preg_split("/((\r?\n)|(\r\n?))/", $newssid) as $line){ ?>
            <option value="<?php echo $line; ?>"><?php echo $line; ?></option> 
