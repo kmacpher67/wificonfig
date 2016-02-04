@@ -50,8 +50,8 @@
 	<form class="form-vertical">
 	<div class="form-group">
 	  <div class="row">
-		 <div class="col-xs-4  control-label">			
-		 <label for="ssid" class="control-label" >SSID:</label>
+		 <div class="col-xs-4 label control-label text-right">			
+		 <label for="ssid" >SSID:</label>
 		 </div>
 		 <div class="col-xs-6">
 			<div id="ssidlisting" > 
