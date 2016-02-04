@@ -1,7 +1,7 @@
 /* keyboard - demo CSS */
 html, body, div, input, textarea {
  font-family: Verdana,Tahoma,Segoe,sans-serif;
- font-size: 30px;
+ font-size: 28px;
 }
 
 body { background: #181818; color: #ddd; height: 98%; margin: 0 auto; padding: 0; }
