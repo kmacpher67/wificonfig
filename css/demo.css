@@ -15,7 +15,7 @@ html, body, div, input, textarea {
 }
 
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
-    font-size: 0.65em;
+    font-size: 0.85em;
 }
 
 body { background: #03ffff; color: #000; height: 98%; margin: 0 auto; padding: 0; }
