@@ -17,6 +17,9 @@ if (count($networks) == 0) {
     exit();
 
 }
+else {
+    echo '<!--   networks available. ' . $networks . ' --!>' . "\r\n";
 
+}
 ?>
 
