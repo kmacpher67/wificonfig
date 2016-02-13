@@ -83,7 +83,7 @@ function getconfig(){
   
   var seld = $('#ssid option:selected'); 
   var url='netwifi-json.php?wifi='+seld[0].value;
-  alert("url="+url + " s=" + seld[0].value );
+//  alert("url="+url + " s=" + seld[0].value );
 
   $.ajax({
     dataType: "json",
@@ -108,7 +108,7 @@ else {
 
 <script>
  $(document).on('change','#ssid',function(){
-    alert('Change Happened'+this.value);
+//    alert('Change Happened'+this.value);
     var url='netwifi-json.php?wifi='+this.value;
         $.ajax({
           dataType: "json",
@@ -117,7 +117,7 @@ else {
                 $("#div1").html(JSON.stringify(result));
                 showkeyboard(result);
                 if (result.encryption==true){
-                        alert("ENCRIPT true");
+                        //alert("ENCRIPT true");
                 }
 
         }
