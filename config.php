@@ -38,7 +38,7 @@
 	</script>
 
 </head>
-<body>
+<body onload="getconfig();">
 <Center>
 <div class="container-fluid .center-block max-width: 100%;">
 	<div class="row">
@@ -72,4 +72,58 @@
 		</div>
 	</div>
 	</form>
-</div></body></html>
+</div>
+
+<script>
+
+  $("#keyboard").prop('disabled', true);
+  
+
+function getconfig(){
+  
+  var seld = $('#ssid option:selected'); 
+  var url='netwifi-json.php?wifi='+seld[0].value;
+  alert("url="+url + " s=" + seld[0].value );
+
+  $.ajax({
+    dataType: "json",
+    url: url,
+    success: function(result){
+        $("#div1").html(JSON.stringify(result));
+        //alert('data='+result.ssid);
+        showkeyboard(result);
+        }
+	});
+}
+function showkeyboard(netwificonfig) {
+
+if(netwificonfig.encryption){
+  $("#keyboard").prop('disabled', false);
+  }
+else {
+  $("#keyboard").prop('disabled', true);
+  }
+}
+</script>
+
+<script>
+ $(document).on('change','#ssid',function(){
+    alert('Change Happened'+this.value);
+    var url='netwifi-json.php?wifi='+this.value;
+        $.ajax({
+          dataType: "json",
+          url: url,
+          success: function(result){
+                $("#div1").html(JSON.stringify(result));
+                showkeyboard(result);
+                if (result.encryption==true){
+                        alert("ENCRIPT true");
+                }
+
+        }
+});
+
+});
+</script>
+
+</body></html>
