@@ -8,17 +8,40 @@
 
 <script> 
 var url='netwifi-json.php?wifi=linksys';
-alert("url="+url);
+//alert("url="+url);
 $.ajax({
   dataType: "json",
   url: url,
   success: function(result){
         $("#div1").html(JSON.stringify(result)); 
-        alert('data='+result.ssid);
+        //alert('data='+result.ssid);
         }
 });
 </script> 
 
+<script> 
+ $(document).on('change','#ssid',function(){
+    alert('Change Happened'+this.value);
+    var url='netwifi-json.php?wifi='+this.value;
+	$.ajax({
+	  dataType: "json",
+  	  url: url,
+	  success: function(result){
+        	$("#div1").html(JSON.stringify(result));
+        }
+});
+
+});
+</script> 
+
+<form>
+<select id="ssid" class="form-control">
+	   <option value="linksys">linksys </option>
+           <option value="KEN-PC3_Network"  >KEN-PC3_Network</option> 
+	  <option value="HardCodedinConfig">None</option>
+
+</select>
+</form>
 <div id="div1">asdf</div> 
 </body> 
 </html> 
