@@ -15,8 +15,18 @@ $.ajax({
   success: function(result){
         $("#div1").html(JSON.stringify(result)); 
         //alert('data='+result.ssid);
+        showkeyboard(result);
         }
 });
+function showkeyboard(netwificonfig) {
+
+if(netwificonfig.encryption){
+  $("#keyboard").prop('disabled', false);
+  }
+else {
+  $("#keyboard").prop('disabled', true);
+  }
+}
 </script> 
 
 <script> 
@@ -28,6 +38,7 @@ $.ajax({
   	  url: url,
 	  success: function(result){
         	$("#div1").html(JSON.stringify(result));
+		showkeyboard(result);
 		if (result.encryption==true){
 			alert("ENCRIPT true");
 		}
@@ -45,6 +56,7 @@ $.ajax({
 	  <option value="HardCodedinConfig">None</option>
 
 </select>
+<input id="keyboard" type="text" class="form-control" >
 </form>
 <div id="div1">asdf</div> 
 </body> 
