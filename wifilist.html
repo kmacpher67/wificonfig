@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<script src="js/jquery-1.12.0.min.js"></script>
+
+</head> 
+<body> 
+
+<script> 
+var url='netwifi-json.php?wifi=linksys';
+alert("url="+url);
+$.ajax({
+  dataType: "json",
+  url: url,
+  success: function(result){
+        $("#div1").html(JSON.stringify(result)); 
+        alert('data='+result.ssid);
+        }
+});
+</script> 
+
+<div id="div1">asdf</div> 
+</body> 
+</html> 
