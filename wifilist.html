@@ -28,6 +28,10 @@ $.ajax({
   	  url: url,
 	  success: function(result){
         	$("#div1").html(JSON.stringify(result));
+		if (result.encryption==true){
+			alert("ENCRIPT true");
+		}
+
         }
 });
 
