@@ -18,7 +18,7 @@ if (count($networks) == 0) {
 
 }
 else {
-    echo '<!--   networks available. ' . $networks . ' --!>' . "\r\n";
+    echo '<!--   networks available. ' . strval(json_encode(get_object_vars($networks))) . ' --!>' . "\r\n";
 
 }
 ?>

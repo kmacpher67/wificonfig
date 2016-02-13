@@ -17,8 +17,9 @@ $wifi = new Net_Wifi();
     //echo "<hr>";
     //echo "<!-- " + $newssid + " --!>";
 
-   $currentwifi = trim(shell_exec(" iwconfig 2>&1 | awk '/ESSID:/ { print $4;}' | cut -d ':' -f 2- |  sed -e 's/^\"//'  -e 's/\"$//' "));
-
+   //$currentwifi = trim(shell_exec(" iwconfig 2>&1 | awk '/ESSID:/ { print $4;}' | cut -d ':' -f 2- |  sed -e 's/^\"//'  -e 's/\"$//' "));
+    $wificonfig = $wifi->getCurrentConfig($interface); 
+    $currentwifi = $wificonfig->ssid; 
     //echo $currentwifi;
     //echo strcmp("linksys",$currentwifi); // needed trim command to be equal 
     //... 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php include 'cellaccesspoint.php';?>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -59,7 +58,7 @@
 			<div id="ssidlisting" > 
 
 				<select id="ssid" class="form-control">
-				<?php include 'wifi.php';?>
+				<?php include 'netwifi.php';?>
 				  <option value="HardCodedinConfig">None</option>
 				</select>
 			</div></div>
