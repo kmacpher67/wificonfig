@@ -42,7 +42,12 @@
 <Center>
 <div class="container-fluid .center-block max-width: 100%;">
 	<div class="row">
-		<div class="col-xs-12  .center-block">
+		<div class="col-xs-1  .center-block">
+		<a href="/config.php" class="">
+		  <img class="invert" src="./images/MENU.png" alt="Menu" />
+		</a>
+		</div>
+		<div class="col-xs-11  .center-block">
 			<div class="product-img">
 			   <img class="img-responsive img-fluid max-width: 100%;" src="./images/creatorbot_full.png" alt="CreatorBot 3D" />
 			</div>
