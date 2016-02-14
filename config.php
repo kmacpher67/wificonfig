@@ -76,6 +76,11 @@
 			</div> <!-- End wrapper -->
 		</div>
 	</div>
+	<div class="row"> 
+		<div class="col-xs-12"> 
+			<button type="submit" class="btn btn-primary">Add SSID & connect</button>
+		</div>
+	</div> 
 	</form>
 </div>
 
