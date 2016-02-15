@@ -152,9 +152,9 @@ button.ui-keyboard-extender span {
 }
 
 /* 480 x 640 (small tablet) */
-@media all and (min-width: 480px) and (max-width: 767px) {
-	.ui-keyboard div { font-size: 14px; }
-	.ui-keyboard .ui-keyboard-input { font-size: 14px; }
+@media all and (min-width: 480px) and (max-width: 810px) {
+	.ui-keyboard div { font-size: 24px; }
+	.ui-keyboard .ui-keyboard-input { font-size: 24px; }
 	.ui-body .ui-btn { margin: 0; font-size: 10px; }
 	.ui-body .ui-keyboard-button { height: 2.5em; }
 	.ui-body .ui-btn-inner { height: 2.5em; padding: 0.5em 0; }
