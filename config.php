@@ -85,11 +85,10 @@
 	</div> 
 
         <div class="row">
-		<div class="col-xs-3 label"></div>
-                <div id="wifistatus" class="col-xs-6">
-                       
+		<div class="col-xs-2"></div>
+                <div id="wifistatus" class="col-xs-8 left">
                 </div>
-		<div class="col-xs-3 label"></div>
+		<div class="col-xs-2"></div>
         </div>
 
 	</form>
@@ -107,7 +106,7 @@ function poll() {
             console.log("polling"+data);
 	    $('#wifistatus').html(data);
         },
-        dataType: "json",
+        dataType: "poll",
         complete: setTimeout(function() {poll()}, 20000),
         timeout: 20000
     })

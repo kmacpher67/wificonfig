@@ -14,6 +14,9 @@ html, body, div, input, textarea {
 	
 }
 
+
+#wifistatus {font-size: 12px; text-align:left; }
+
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
     font-size: 0.85em;
 }
