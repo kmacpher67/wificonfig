@@ -49,7 +49,9 @@
 		</div>
 		<div class="col-xs-11  .center-block">
 			<div class="product-img">
+			  <a href="/config.php" class="">
 			   <img class="img-responsive img-fluid max-width: 100%;" src="./images/creatorbot_full.png" alt="CreatorBot 3D" />
+			  </a>
 			</div>
 		</div>
 	</div>
