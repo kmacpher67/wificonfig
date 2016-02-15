@@ -44,7 +44,7 @@
 	<div class="row">
 		<div class="col-xs-1  .center-block">
 		<a href="/config.php" class="">
-		  <img class="invert" src="./images/MENU.png" alt="Menu" />
+		  <img class="invert" src="./images/menu.png" alt="Menu" />
 		</a>
 		</div>
 		<div class="col-xs-11  .center-block">
@@ -83,13 +83,35 @@
 			<button type="submit" class="btn btn-primary">Add SSID & connect</button>
 		</div>
 	</div> 
+
+        <div class="row">
+		<div class="col-xs-3 label"></div>
+                <div id="wifistatus" class="col-xs-6">
+                       
+                </div>
+		<div class="col-xs-3 label"></div>
+        </div>
+
 	</form>
 </div>
 
 <script>
 
   $("#keyboard").prop('disabled', true);
-  
+
+(function poll() {
+    $.ajax({
+        url: "netwifi-status.php",
+        type: "GET",
+        success: function(data) {
+            console.log("polling"+data);
+	    $('#wifistatus').html(data);
+        },
+        dataType: "json",
+        complete: setTimeout(function() {poll()}, 20000),
+        timeout: 20000
+    })
+})();  
 
 function getconfig(){
   
