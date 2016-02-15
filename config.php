@@ -99,6 +99,7 @@
 <script>
 
   $("#keyboard").prop('disabled', true);
+  $("#keyboard").addClass('hidden');
 
 function poll() {
     $.ajax({
@@ -150,9 +151,11 @@ function showkeyboard(netwificonfig) {
 
 if(netwificonfig.encryption){
   $("#keyboard").prop('disabled', false);
+  $("#keyboard").removeClass('hidden');
   }
 else {
   $("#keyboard").prop('disabled', true);
+  $("#keyboard").addClass('hidden');
   }
 }
 </script>
