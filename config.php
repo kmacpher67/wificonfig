@@ -94,12 +94,12 @@
 
 	</form>
 </div>
-
+</center> 
 <script>
 
   $("#keyboard").prop('disabled', true);
 
-(function poll() {
+function poll() {
     $.ajax({
         url: "netwifi-status.php",
         type: "GET",
@@ -111,7 +111,7 @@
         complete: setTimeout(function() {poll()}, 20000),
         timeout: 20000
     })
-})();  
+}  
 
 function getconfig(){
   
@@ -130,6 +130,19 @@ function getconfig(){
 	});
 
    poll(); 
+
+    $.ajax({
+        url: "netwifi-status.php",
+        type: "GET",
+        success: function(data) {
+            console.log("polling"+data);
+            $('#wifistatus').html(data);
+        },
+        dataType: "html",
+        complete: setTimeout(function() {poll()}, 20000),
+        timeout: 20000
+    })
+
 
 }
 function showkeyboard(netwificonfig) {
