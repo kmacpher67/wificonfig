@@ -2,6 +2,7 @@
 // status report netwifi-status.php
 
 $statuswifi = shell_exec("sudo wpa_cli -iwlan0 status");
+$statuswifi = shell_exec("wpa_cli -iwlan0 list_networks");
 $statuswifi2 = shell_exec("ifconfig wlan0 | awk '/inet addr:/ { print $2;}' "  ) . shell_exec("iwgetid ");
 //$statuswifi2 = shell_exec("ifconfig wlan0 |grep 'inet addr:'"  );
 //$statuswifi3 = shell_exec("iwgetid ");
