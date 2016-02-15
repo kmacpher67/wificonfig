@@ -128,6 +128,9 @@ function getconfig(){
         showkeyboard(result);
         }
 	});
+
+   poll(); 
+
 }
 function showkeyboard(netwificonfig) {
 
