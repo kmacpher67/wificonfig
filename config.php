@@ -55,7 +55,7 @@
 			</div>
 		</div>
 	</div>
-	<form class="form-vertical">
+	<form class="form-vertical" action="netwifi-update.php" method="POST">
 	<div class="form-group">
 	  <div class="row">
 		 <div class="col-xs-3 label control-label text-right">			
@@ -64,7 +64,7 @@
 		 <div class="col-xs-6">
 			<div id="ssidlisting" > 
 
-				<select id="ssid" class="form-control">
+				<select id="ssid" name="ssid" class="form-control">
 				<?php include 'netwifi.php';?>
 				  <option value="HardCodedinConfig">None</option>
 				</select>
@@ -75,7 +75,7 @@
 <div class="col-xs-3 label text-right" ><label for="keyboard" >wifi password:</label></div>
 		  <div id="kbid" class="col-xs-6"> <!-- wrapper only needed to center the input -->
 				<!-- keyboard input -->
-				<input id="keyboard" type="text" class="form-control" >
+				<input id="keyboard" type="text" class="form-control" name="password" >
 			</div> <!-- End wrapper -->
 		</div>
 <div class="col-xs-3 label"></div> 
