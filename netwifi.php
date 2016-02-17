@@ -25,16 +25,18 @@ $wifi = new Net_Wifi();
     //... 
 	$_SESSION['ssid']=$networks;
 	$_SESSION['currentwifi']=$currentwifi;
-    echo '<pre>';
-    echo '' . json_encode(get_object_vars($networks) );
-    echo '</pre>';
+//    echo '<pre>';
+//     echo '' . json_encode(get_object_vars($networks) );
+//     echo '</pre>';
     ?>
  	<?php
 	foreach($networks as $line){ 
-    echo '<pre>';
-    echo '' . json_encode(get_object_vars($line) );
-    echo '</pre>';
+//     echo '<pre>';
+//     echo '' . json_encode(get_object_vars($line) );
+//     echo '</pre>';
 
         ?>
            <option value="<?php echo strval($line->ssid); ?>" <?php if(strcmp($line->ssid,$currentwifi)==0){ echo' selected'; }?> ><?php echo $line->ssid; ?></option> 
 	<?php } ?>
+
+

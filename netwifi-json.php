@@ -13,7 +13,11 @@ $reqnetwork = $_GET['wifi'];
 $networks = $wifi->scan($interface);
 
 if (count($networks) == 0 || is_null($reqnetwork)|| $reqnetwork=="") {
-    echo json_encode($wifi->getCurrentConfig($interface), JSON_PRETTY_PRINT);
+    $resultconfig = $wifi->getCurrentConfig($interface); 
+    //$resultconfig->psk = sed "/^[[:space:]]*ssid=\"$SSID\"[[:space:]]*$/,/}/s/^\([[:space:]]*psk=\"\)[^\"]*/\2$PSK/"
+    $resultjson = json_encode($resultconfig, JSON_PRETTY_PRINT);
+    $resultjson->rows[0]->psk = "welcome1";
+    echo json_encode($resultconfig, JSON_PRETTY_PRINT);
     exit();
 }
 else {
