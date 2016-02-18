@@ -30,9 +30,10 @@ function newNetworkPsk($ssid, $passwd, $networkindex) {
         shell_exec("wpa_cli -iwlan0 save_config");
 }
 
-function returnValues(){
-
-
+function returnValues($ssid)
+	$indexval=0; 
+	$indexval= shell_exec("wpa_cli -iwlan0 list_networks |awk '/" . $ssid ."/ { print $1;}' ");
+return $indexval;
 }
 
 if (is_null($interface)|| $interface==""){
