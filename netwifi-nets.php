@@ -10,7 +10,7 @@ if (is_null($interface)|| $interface==""){
 
 $networks = $wifi->scan($interface);
 
-if (count($networks) == 0) {
+if (is_null($networks) || count($networks) == 0) {
 
     echo '<div class="ERROR"> No wireless networks available.</div>' . "\r\n";
 
@@ -18,7 +18,13 @@ if (count($networks) == 0) {
 
 }
 else {
-    echo '<!--   networks available. ' . strval(json_encode(get_object_vars($networks))) . ' --!>' . "\r\n";
+    //echo 'attitude=' . count($networks) . ' <br> ' . "\r\n"; 
+    //echo 'dog whisper:' . get_object_vars($networks) . '<br>' . "\r\n";
+    echo '<!--   networks available. ' . count($networks) . ' --!>' . "\r\n";
+
+    foreach ($networks as $network) {
+	    echo '' . strval(json_encode(get_object_vars($network))) .  "\r\n";
+	}
 
 }
 ?>

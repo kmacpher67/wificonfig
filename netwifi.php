@@ -5,7 +5,7 @@ $wifi = new Net_Wifi();
 //get all wireless interfaces
     $interface="wlan0";
      include 'netwifi-interfaces.php';    
-    $networks="";
+    //$networks="";
      include 'netwifi-nets.php';    
      echo "<!-- networks size " . $interface . " count = " . count($networks) . " --!>" . "\r\n"; 
     session_start();
