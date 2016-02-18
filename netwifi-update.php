@@ -13,12 +13,30 @@ if (is_null($interface)|| $interface==""){
       }
 
 $networks = $wifi->scan($interface);
+$ssid = "linksys";
 
 if( $_POST["ssid"] || $_POST["keyboard"] ) {
-      echo "<!-- " . $_POST["ssid"]  .  $_POST["keyboard"] . " ---!>"; 
-       
+
+      $ssid=$_POST["ssid"];
+      echo "<!-- " . $ssid  .  $_POST["keyboard"] . " ---!>"; 
       
       }
+
+
+$networkindex=0; 
+
+shell_exec("wpa_cli -iwlan0 status |wc -l ");
+
+shell_exec("wpa_cli -iwlan0 disconnect");
+shell_exec("wpa_cli -iwlan0 add_network");
+shell_exec("wpa_cli -iwlan0 set_network " . $networkindex . " auth_alg OPEN");
+shell_exec("wpa_cli -iwlan0 set_network " . $networkindex . " key_mgmt NONE");
+shell_exec("wpa_cli -iwlan0 set_network " . $networkindex . "  mode 0");
+shell_exec("wpa_cli -iwlan0 set_network " . $networkindex . "  ssid " . $ssid);
+shell_exec("wpa_cli -iwlan0 select_network " . $networkindex  );
+shell_exec("wpa_cli -iwlan0 enable_network " . $networkindex  );
+shell_exec("wpa_cli -iwlan0 reassociate");
+shell_exec("wpa_cli -iwlan0 save_config");
 
 include 'config.php';
 
