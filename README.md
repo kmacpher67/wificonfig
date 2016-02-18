@@ -1,9 +1,9 @@
 3dPrinterWorks CreatorBot3d -   wificonfig 
  -This is the project README.md for CreatorBot3d php wifi config.  
  -simple php / html-bootstrap-jquery-ui coolness for wifi config from a web console.
- -
+
  +Raspberry PI - php wificonfig 
- + working application for raspberry pi, wpa_supplicant, Jessie 
+ +working application for raspberry pi, wpa_supplicant, Jessie 
   ------------------------------------------------------------------------
   
  -PROJECT TITLE: wificonfig
@@ -12,12 +12,13 @@
  +PROJECT TITLE: Raspberry  virtual keyboard, php, config wireless wifi
  +PURPOSE OF PROJECT: PoC sample for 3dPrinterWorks and CreatorBot3d. 
  +VERSION or DATE: 2016-2-18-05-29-kmacpher67
-  HOW TO START THIS PROJECT:
-  AUTHORS:
-  USER INSTRUCTIONS:
- +
+1.  HOW TO START THIS PROJECT:
+1.1.  SETUP:
+2. USER INSTRUCTIONS:
+3. DISCUSSIONS
+ + 
 
-HOW TO START THIS PROJECT:
+*HOW TO START THIS PROJECT:
 
 The Raspberry PI installation is based on using latest image from Raspian Jessie (Debian flavor). 
 
