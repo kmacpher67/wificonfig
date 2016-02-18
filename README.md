@@ -24,6 +24,7 @@ The Raspberry PI installation is based on using latest image from Raspian Jessie
 
 SETUP: 
 #  
+```
 sudo su -     
 cd /root
 apt-get update
@@ -45,7 +46,7 @@ wget http://steinerdatenbank.de/software/kweb-1.6.9.tar.gz
 tar -xzf kweb-1.6.9.tar.gz
 cd kweb-1.6.9
 ./debinstall
-
+```
 
 USER INSTRUCTIONS:
 
