@@ -37,9 +37,14 @@ function nextIndex(){
    return $nextindex;
    }
 
+function setNetwork($ssid, $networkindex){
+
+	shell_exec("wpa_cli -iwlan0 select_network " . networkindex  );
+        shell_exec("wpa_cli -iwlan0 enable_network " . networkindex  );
+  } 
 
 function getIndex($ssid){
-	$indexval=0; 
+	$indexval=-1; 
 	$indexval= shell_exec("wpa_cli -iwlan0 list_networks |awk '/" . $ssid ."/ { print $1;}' ");
    return $indexval;
    }
@@ -58,6 +63,16 @@ if( $_POST["ssid"] || $_POST["keyboard"] ) {
 	$networkindex=0; 
 	$networkindex = getIndex($ssid);
 	 echo "<!-- " . $ssid  . " index=" . $networkindex . " ---!>";
+	if($networkindex<0) {
+	        // create new index & wpa supplicant entrya
+		$networkindex = nextIndex();
+		// @TODO add logic for encrypted network = true 
+		newNetworkOpen($ssid, $networkindex);
+
+		} 
+        else {
+		setNetwork($ssid, $networkindex);
+             }
 	}
 
 include 'config.php';
