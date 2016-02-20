@@ -10,6 +10,8 @@ if (count($interfaces) == 0) {
 
     echo '<div class="Error"> No wireless interfaces found! </div>' . "\r\n";
 
+	exec("iwlist wlan0 scanning");
+
     exit();
 
 }

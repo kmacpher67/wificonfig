@@ -30,11 +30,19 @@ function newNetworkPsk($ssid, $passwd, $networkindex) {
         shell_exec("wpa_cli -iwlan0 save_config");
 }
 
-function returnValues($ssid)
+function nextIndex(){
+
+   $nextindex=3; 
+   $nextindex = $shell_exec("wpa_cli -iwlan0 list_networks | grep ^[0-9] | wc -l" );  
+   return $nextindex;
+   }
+
+
+function getIndex($ssid){
 	$indexval=0; 
 	$indexval= shell_exec("wpa_cli -iwlan0 list_networks |awk '/" . $ssid ."/ { print $1;}' ");
-return $indexval;
-}
+   return $indexval;
+   }
 
 if (is_null($interface)|| $interface==""){
       $interface="wlan0";
@@ -48,7 +56,8 @@ if( $_POST["ssid"] || $_POST["keyboard"] ) {
       $ssid=$_POST["ssid"];
       echo "<!-- " . $ssid  .  $_POST["keyboard"] . " ---!>"; 
 	$networkindex=0; 
-	$networkindex = shell_exec("wpa_cli -iwlan0 status |wc -l ");
+	$networkindex = getIndex($ssid);
+	 echo "<!-- " . $ssid  . " index=" . $networkindex . " ---!>";
 	}
 
 include 'config.php';
