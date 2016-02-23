@@ -1,10 +1,15 @@
 <?php
-
 require_once 'Net/Wifi.php';
 $wifi = new Net_Wifi();
 //get all wireless interfaces
 
 $interfaces = $wifi->getSupportedInterfaces();
+
+$raw = shell_exec("/var/www/wificonfig/test.sh");
+
+echo "RAW=<PRE>" . $raw . " </PRE>- end raw <BR>";
+
+
 
 if (count($interfaces) == 0) {
 
