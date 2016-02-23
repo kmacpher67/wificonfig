@@ -39,8 +39,11 @@ function nextIndex(){
 
 function setNetwork($ssid, $networkindex){
 
+	shell_exec("wpa_cli -iwlan0 disconnect");
 	shell_exec("wpa_cli -iwlan0 select_network " . networkindex  );
         shell_exec("wpa_cli -iwlan0 enable_network " . networkindex  );
+       shell_exec("wpa_cli -iwlan0 reassociate");
+
   } 
 
 function getIndex($ssid){
