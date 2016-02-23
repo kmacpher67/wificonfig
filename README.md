@@ -49,6 +49,12 @@ cd kweb-1.6.9
 ./debinstall
 ```
 
+add vi /etc/sudoers
+```
+www-data localhost=nopasswd: /usr/bin/convert, /bin/netstat
+```
+
+
 ## USER INSTRUCTIONS:
 
 http://192.168.1.140/wificonfig/config.php
@@ -60,3 +66,6 @@ is the main page.
 * wpa_cli
  wpa_cli is a text-based frontend program for interacting with wpa_supplicant. It is used to query current status, change configuration, trigger events,  and
        request interactive user input.
+
+A
+`
