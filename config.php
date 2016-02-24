@@ -64,7 +64,7 @@
 		 <div class="col-xs-6">
 			<div id="ssidlisting" > 
 
-				<select id="ssid" name="ssid" class="form-control">
+				<select id="ssid" name="ssid" class="form-control" onchange="dopoll()">
 				<?php include 'netwifi.php';?>
 				  <option value="">None</option>
 				</select>
@@ -101,7 +101,9 @@
   $("#keyboard").prop('disabled', true);
   $("#keyboard").addClass('hidden');
 
-function poll() {
+function dopoll() {
+    console.log("dopoll()");
+
     $.ajax({
         url: "netwifi-status.php",
         type: "GET",
@@ -119,14 +121,13 @@ function poll() {
 			console.log("false");
 		     }
         },
-        dataType: "poll",
-        complete: setTimeout(function() {poll()}, 20000),
-        timeout: 20000
-    })
+        dataType: "html",
+        complete: setTimeout(function() {dopoll()}, 20000)
+    });
 }  
 
 function getconfig(){
-  
+ console.log("getconfig()"); 
   var seld = $('#ssid option:selected'); 
   var url='netwifi-json.php?wifi='+seld[0].value;
 //  alert("url="+url + " s=" + seld[0].value );
@@ -141,7 +142,7 @@ function getconfig(){
         }
 	});
 
-   poll(); 
+   dopoll(); 
 
     $.ajax({
         url: "netwifi-status.php",
@@ -162,8 +163,7 @@ function getconfig(){
                      }
         },
         dataType: "html",
-        complete: setTimeout(function() {poll()}, 20000),
-        timeout: 20000
+	timeout: 20000
     })
 
 
