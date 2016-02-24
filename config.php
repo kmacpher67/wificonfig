@@ -66,7 +66,7 @@
 
 				<select id="ssid" name="ssid" class="form-control">
 				<?php include 'netwifi.php';?>
-				  <option value="HardCodedinConfig">None</option>
+				  <option value="">None</option>
 				</select>
 			</div></div>
               <div class="col-xs-3 label"></div>
@@ -82,7 +82,7 @@
 	</div>
 	<div class="row"> 
 		<div class="col-xs-12"> 
-			<button type="submit" class="btn btn-primary">Add SSID & connect</button>
+			<button type="submit" id="AddSubmit" class="btn btn-primary">Add SSID & connect</button>
 		</div>
 	</div> 
 
@@ -108,6 +108,16 @@ function poll() {
         success: function(data) {
             console.log("polling"+data);
 	    $('#wifistatus').html(data);
+            var ssidval = $('#ssid option:selected')[0].value
+	    console.log("ssidval="+ssidval);	
+            if (data.indexOf(ssidval)>0 ){
+			showAdd(true);
+                        console.log("true");
+		}
+		else {
+			showAdd(false);
+			console.log("false");
+		     }
         },
         dataType: "poll",
         complete: setTimeout(function() {poll()}, 20000),
@@ -139,6 +149,17 @@ function getconfig(){
         success: function(data) {
             console.log("polling"+data);
             $('#wifistatus').html(data);
+
+	    var ssidval = $('#ssid option:selected')[0].value
+            console.log("ssidval="+ssidval);
+            if (data.indexOf(ssidval)>0 ){
+                        showAdd(true);
+                        console.log("true");
+                }
+                else {
+                        showAdd(false);
+                        console.log("false");
+                     }
         },
         dataType: "html",
         complete: setTimeout(function() {poll()}, 20000),
@@ -147,6 +168,19 @@ function getconfig(){
 
 
 }
+
+function showAdd(isConnected){
+
+if(!isConnected){
+  $("#AddSubmit").prop('disabled', false);
+  $("#AddSubmit").removeClass('hidden');
+  }
+else {
+  $("#AddSubmit").prop('disabled', true);
+  $("#AddSubmit").addClass('hidden');
+  }
+}
+
 function showkeyboard(netwificonfig) {
 
 if(netwificonfig.encryption){

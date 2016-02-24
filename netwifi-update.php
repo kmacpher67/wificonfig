@@ -40,7 +40,7 @@ function newNetworkPsk($ssid, $passwd, $networkindex) {
 function nextIndex(){
 
    $nextindex=3; 
-   $nextindex = $shell_exec("sudo wpa_cli -iwlan0 list_networks | grep ^[0-9] | wc -l" );  
+   $nextindex = shell_exec("sudo wpa_cli -iwlan0 list_networks | grep ^[0-9] | wc -l" );  
    return $nextindex;
    }
 
