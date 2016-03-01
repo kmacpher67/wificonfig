@@ -4,15 +4,17 @@
 
 require_once 'Net/Wifi.php';
 $wifi = new Net_Wifi();
-
+echo "<!--- wifi object valid ==" . json_encode($wifi) . " --!>";
 //default $interface="wlan0";
 $interface="wlan0";
-
+echo "<!--- interface valid ==" . $interface ." --!>";
 //get all wireless interfaces
 $interfaces = $wifi->getSupportedInterfaces();
+echo "<!--- $interfaces = " . $interfaces . " --!>";
 if (count($interfaces) == 0) {
     echo 'No wireless interfaces found!' . "\r\n";
-    shell_exec("sudo ifup wlan0; sleep 2;");
+    shell_exec("sudo ifdown wlan0; sleep 1; sudo ifup wlan0; sleep 1;");
+
     exit();
 }
 

@@ -1,6 +1,3 @@
-<?php
-shell_exec("iwlist wlan0 scanning; sleep 4;");
-?>
 <!DOCTYPE html>
 <html>
 <head>

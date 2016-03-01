@@ -15,7 +15,8 @@ function newNetworkOpen($ssid, $networkindex) {
         shell_exec("sudo wpa_cli -iwlan0 select_network " . $networkindex  );
         shell_exec("sudo wpa_cli -iwlan0 enable_network " . $networkindex  );
         shell_exec("sudo wpa_cli -iwlan0 reassociate");
-        shell_exec("sudo wpa_cli -iwlan0 save_config");
+        shell_exec("sudo wpa_cli -iwlan0 save_config; sleep 1;");
+        shell_exec("sudo ifup wlan0");
 }
 
 function newNetworkPsk($ssid, $passwd, $networkindex) {
@@ -34,7 +35,8 @@ function newNetworkPsk($ssid, $passwd, $networkindex) {
         shell_exec("sudo wpa_cli -iwlan0 select_network " . $networkindex  );
         shell_exec("sudo wpa_cli -iwlan0 enable_network " . $networkindex  );
         shell_exec("sudo wpa_cli -iwlan0 reassociate");
-        shell_exec("sudo wpa_cli -iwlan0 save_config");
+        shell_exec("sudo wpa_cli -iwlan0 save_config; sleep 1;");
+	shell_exec("sudo ifup wlan0");
 }
 
 function nextIndex(){
@@ -58,6 +60,12 @@ function getIndex($ssid){
 	$indexval= shell_exec("sudo wpa_cli -iwlan0 list_networks |awk '/" . $ssid ."/ { print $1;}' ");
    return $indexval;
    }
+
+function restart(){
+
+	 shell_exec("sudo ifup wlan0");
+
+}
 
 if (!array_key_exists('interface', get_defined_vars()) || is_null($interface)|| $interface==""){
       $interface="wlan0";
