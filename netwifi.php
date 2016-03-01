@@ -1,5 +1,5 @@
 <?php
-
+shell_exec("iwlist wlan0 scanning; sleep 4;");
 require_once 'Net/Wifi.php';
 $wifi = new Net_Wifi();
 //get all wireless interfaces
@@ -11,8 +11,8 @@ $wifi = new Net_Wifi();
     session_start();
     //...your code
     $ssid=$_SESSION['ssid'];
-    $newssid = shell_exec("iwlist wlan0 scanning | awk '/ESSID:/ { print $1;}' | cut -d ':' -f 2- | sed -e 's/^\"//'  -e 's/\"$//'");
-    $newssid2 = shell_exec("iwlist wlan0 scanning | awk '/ESSID:/ { print $1;}'");
+    //$newssid = shell_exec("iwlist wlan0 scanning | awk '/ESSID:/ { print $1;}' | cut -d ':' -f 2- | sed -e 's/^\"//'  -e 's/\"$//' ; sleep 3;");
+    //$newssid2 = shell_exec("iwlist wlan0 scanning | awk '/ESSID:/ { print $1;}'");
     // echo shell_exec("iwlist wlan0 scanning | awk '/ESSID:/ { print $1;}' | cut -d ':' -f 2-");
     //echo "<hr>";
     //echo "<!-- " + $newssid + " --!>";

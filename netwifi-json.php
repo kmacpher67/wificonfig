@@ -12,7 +12,7 @@ $interface="wlan0";
 $interfaces = $wifi->getSupportedInterfaces();
 if (count($interfaces) == 0) {
     echo 'No wireless interfaces found!' . "\r\n";
-    shell_exec("sudo ifup wlan0";
+    shell_exec("sudo ifup wlan0; sleep 2;");
     exit();
 }
 
