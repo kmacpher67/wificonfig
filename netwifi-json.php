@@ -5,6 +5,9 @@
 require_once 'Net/Wifi.php';
 $wifi = new Net_Wifi();
 
+//get all wireless interfaces
+$interfaces = $wifi->getSupportedInterfaces();
+
 if (is_null($interface)|| $interface==""){
       $interface="wlan0";
       }
