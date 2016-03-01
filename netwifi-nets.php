@@ -8,12 +8,16 @@ if (is_null($interface)|| $interface==""){
       $interface="wlan0";
       }
 
+$outnet = shell_exec("sudo iwlist wlan0 scan; sleep 1;");
+
+//$networks = $wifi->parseScan($outnet);
+//echo "debug=" . $outnet . " <hr> networks=" . $networks . " size=" . count($networks); 
 $networks = $wifi->scan($interface);
 
 if (is_null($networks) || count($networks) == 0) {
 
     echo '<div class="ERROR"> No wireless networks available.</div>' . "\r\n";
-
+    
     exit();
 
 }
