@@ -5,12 +5,17 @@
 require_once 'Net/Wifi.php';
 $wifi = new Net_Wifi();
 
+//default $interface="wlan0";
+$interface="wlan0";
+
 //get all wireless interfaces
 $interfaces = $wifi->getSupportedInterfaces();
+if (count($interfaces) == 0) {
+    echo 'No wireless interfaces found!' . "\r\n";
+    shell_exec("sudo ifup wlan0";
+    exit();
+}
 
-if (is_null($interface)|| $interface==""){
-      $interface="wlan0";
-      }
 
 $reqnetwork = $_GET['wifi'];
 $networks = $wifi->scan($interface);
