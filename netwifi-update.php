@@ -5,7 +5,7 @@ require_once 'Net/Wifi.php';
 $wifi = new Net_Wifi();
 
 function newNetworkOpen($ssid, $networkindex) {
-	echo "<!-- newNetworkOpen ". $ssid . $networkindex . " --!>"
+	echo "<!-- newNetworkOpen ". $ssid . $networkindex . " --!>";
         shell_exec("sudo wpa_cli -iwlan0 disconnect");
         shell_exec("sudo wpa_cli -iwlan0 add_network");
         shell_exec("sudo wpa_cli -iwlan0 set_network " . $networkindex . " auth_alg OPEN");
