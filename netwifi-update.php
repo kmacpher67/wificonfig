@@ -19,7 +19,7 @@ function newNetworkOpen($ssid, $networkindex) {
 }
 
 function newNetworkPsk($ssid, $passwd, $networkindex) {
-	echo "<!-- newNetworkOpenPSK ". $ssid . $passwd. $networkindex . " --!>
+	echo "<!-- newNetworkOpenPSK ". $ssid . $passwd. $networkindex . " --!>";
         shell_exec("sudo wpa_cli -iwlan0 disconnect");
         shell_exec("sudo wpa_cli -iwlan0 add_network");
         shell_exec("sudo wpa_cli -iwlan0 set_network " . $networkindex . " auth_alg OPEN");
@@ -59,7 +59,7 @@ function getIndex($ssid){
    return $indexval;
    }
 
-if (is_null($interface)|| $interface==""){
+if (!array_key_exists('interface', get_defined_vars()) || is_null($interface)|| $interface==""){
       $interface="wlan0";
       }
 
@@ -70,7 +70,7 @@ if( $_POST["ssid"] ) {
 
       $passwd = ""; 
       if( isset($_POST['password']) ){
-		$passwd = $_POST['password']);
+		$passwd = $_POST["password"];
 	} 
 
       $ssid=$_POST["ssid"];
